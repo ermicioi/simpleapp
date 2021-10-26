@@ -1,6 +1,15 @@
 spring:
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/simple-app
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/simpleapp
     username: root
     password: rootpass
     driver-class-name: com.mysql.jdbc.Driver
+    initialization-mode: always
+
+  jpa:
+    generate-ddl: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
