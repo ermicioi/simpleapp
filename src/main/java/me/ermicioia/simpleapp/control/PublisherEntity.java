@@ -1,4 +1,4 @@
-package me.ermicioia.simpleapp;
+package me.ermicioia.simpleapp.control;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,11 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book_publisher")
+@Table(name = "publisher")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class BookPublisherEntity extends AbstractEntity {
+public class PublisherEntity extends AbstractEntity {
 
     private String name;
 

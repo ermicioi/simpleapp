@@ -1,4 +1,4 @@
-package me.ermicioia.simpleapp;
+package me.ermicioia.simpleapp.control;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,9 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book_category")
+@Table(name = "category")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class BookCategoryEntity extends AbstractEntity {
+public class CategoryEntity extends AbstractEntity {
+
+    private String name;
+
 }

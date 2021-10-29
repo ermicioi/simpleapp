@@ -1,4 +1,4 @@
-package me.ermicioia.simpleapp;
+package me.ermicioia.simpleapp.control;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +30,6 @@ public class BookEntity extends VersionedEntity {
             joinColumns = @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_book_category_book_id")),
             inverseJoinColumns = @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "fk_book_category_category_id"))
     )
-    private List<BookCategoryEntity> categories;
+    private List<CategoryEntity> categories;
 
 }

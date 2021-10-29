@@ -1,4 +1,4 @@
-package me.ermicioia.simpleapp;
+package me.ermicioia.simpleapp.control;
 
 import lombok.Getter;
 import lombok.Setter;
