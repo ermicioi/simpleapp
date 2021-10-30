@@ -16,6 +16,7 @@ public class BookController {
     private final BookRepository bookRepository;
     private final BookTransformer bookTransformer;
     private final BookV2Transformer bookV2Transformer;
+    private final BookV3Transformer bookV3Transformer;
 
     @GetMapping
     List<BookDto> getBooks() {
@@ -25,6 +26,11 @@ public class BookController {
     @GetMapping("/v2")
     List<BookV2Dto> getBooksV2() {
         return bookV2Transformer.fromEntity(bookRepository.findAll());
+    }
+
+    @GetMapping(params = "version=3")
+    List<BookV3Dto> getBooksV3() {
+        return bookV3Transformer.fromEntity(bookRepository.findAll());
     }
 
 }
