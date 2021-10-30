@@ -8,11 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "publisher")
+@Table(name = "book_category")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class PublisherEntity extends AbstractEntity {
+public class BookCategoryEntity extends VersionedEntity {
 
     private String name;
 

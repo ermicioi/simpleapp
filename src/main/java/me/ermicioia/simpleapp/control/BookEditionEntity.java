@@ -10,11 +10,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "edition")
+@Table(name = "book_edition")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class EditionEntity extends AbstractEntity {
+public class BookEditionEntity extends VersionedEntity {
 
     private String isbn;
 
@@ -22,6 +22,6 @@ public class EditionEntity extends AbstractEntity {
     private BookEntity book;
 
     @OneToOne
-    private PublisherEntity publisher;
+    private BookPublisherEntity publisher;
 
 }

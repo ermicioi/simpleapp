@@ -8,17 +8,14 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "author")
+@Table(name = "book_author")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class AuthorEntity extends VersionedEntity {
+public class BookAuthorEntity extends VersionedEntity {
 
     private String firstName;
 
     private String lastName;
-
-    @ManyToMany(mappedBy = "authors")
-    private List<BookEntity> books;
 
 }

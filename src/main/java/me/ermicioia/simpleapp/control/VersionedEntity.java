@@ -15,7 +15,6 @@ import javax.persistence.Version;
 abstract public class VersionedEntity extends AbstractEntity {
 
     @Version
-    @Column(columnDefinition = "INTEGER DEFAULT 0")
     private long version = 0;
 
 }

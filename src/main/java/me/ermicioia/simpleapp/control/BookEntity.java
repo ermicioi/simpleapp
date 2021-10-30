@@ -18,18 +18,18 @@ public class BookEntity extends VersionedEntity {
 
     @ManyToMany
     @JoinTable(
-            name = "book_author",
-            joinColumns = @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_book_author_book_id")),
-            inverseJoinColumns = @JoinColumn(name = "author_id", foreignKey = @ForeignKey(name = "fk_book_author_author_id"))
-    )
-    private List<AuthorEntity> authors;
-
-    @ManyToMany
-    @JoinTable(
-            name = "book_category",
+            name = "book_category_map",
             joinColumns = @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_book_category_book_id")),
             inverseJoinColumns = @JoinColumn(name = "category_id", foreignKey = @ForeignKey(name = "fk_book_category_category_id"))
     )
-    private List<CategoryEntity> categories;
+    private List<BookCategoryEntity> categories;
+
+    @ManyToMany
+    @JoinTable(
+            name = "book_author_map",
+            joinColumns = @JoinColumn(name = "book_id", foreignKey = @ForeignKey(name = "fk_book_author_book_id")),
+            inverseJoinColumns = @JoinColumn(name = "author_id", foreignKey = @ForeignKey(name = "fk_book_author_author_id"))
+    )
+    private List<BookAuthorEntity> authors;
 
 }

@@ -7,10 +7,9 @@ spring:
     initialization-mode: always
 
   jpa:
-    generate-ddl: true
-    defer-datasource-initialization: true
+    generate-ddl: false
     database-platform: org.hibernate.dialect.MariaDBDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
