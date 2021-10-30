@@ -1,11 +1,10 @@
 package me.ermicioia.simpleapp.border;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@ToString
 public class BookDto {
 
     private final String title;
