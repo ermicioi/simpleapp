@@ -8,4 +8,6 @@ public interface BookAuthorTransformer {
 
     List<BookAuthorDto> fromEntity(final List<BookAuthorEntity> authors);
 
+    BookAuthorEntity fromDto(final BookAuthorDto dto);
+
 }

@@ -10,7 +10,8 @@ CREATE TABLE book_author (
     version     INT             NOT NULL DEFAULT 0,
     first_name  VARCHAR(255)    NOT NULL,
     last_name   VARCHAR(255)    NOT NULL,
-    PRIMARY KEY pk_book_author__id (id)
+    PRIMARY KEY pk_book_author__id (id),
+    CONSTRAINT uc_first_last_name UNIQUE (first_name , last_name)
 );
 
 CREATE TABLE book_author_map (

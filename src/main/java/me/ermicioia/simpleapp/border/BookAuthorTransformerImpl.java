@@ -18,4 +18,12 @@ class BookAuthorTransformerImpl implements BookAuthorTransformer {
                         .build())
                 .collect(ImmutableList.toImmutableList());
     }
+
+    @Override
+    public BookAuthorEntity fromDto(final BookAuthorDto dto) {
+        final BookAuthorEntity author = new BookAuthorEntity();
+        author.setFirstName(dto.getFirstName());
+        author.setLastName(dto.getLastName());
+        return author;
+    }
 }
