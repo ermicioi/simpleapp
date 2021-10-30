@@ -10,4 +10,6 @@ public interface BookAuthorTransformer {
 
     BookAuthorEntity fromDto(final BookAuthorDto dto);
 
+    BookAuthorEntity update(final BookAuthorEntity entity, final BookAuthorDto dto);
+
 }

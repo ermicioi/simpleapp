@@ -21,9 +21,13 @@ class BookAuthorTransformerImpl implements BookAuthorTransformer {
 
     @Override
     public BookAuthorEntity fromDto(final BookAuthorDto dto) {
-        final BookAuthorEntity author = new BookAuthorEntity();
-        author.setFirstName(dto.getFirstName());
-        author.setLastName(dto.getLastName());
-        return author;
+        return update(new BookAuthorEntity(), dto);
+    }
+
+    @Override
+    public BookAuthorEntity update(final BookAuthorEntity entity, final BookAuthorDto dto) {
+        entity.setFirstName(dto.getFirstName());
+        entity.setLastName(dto.getLastName());
+        return entity;
     }
 }

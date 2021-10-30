@@ -1,9 +1,12 @@
 package me.ermicioia.simpleapp.border;
 
 import lombok.RequiredArgsConstructor;
+import me.ermicioia.simpleapp.control.BookAuthorEntity;
 import me.ermicioia.simpleapp.control.BookAuthorRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +33,15 @@ class AuthorController {
     @PostMapping(consumes = JSON_VERSION_1)
     void addAuthor(@RequestBody @Valid final BookAuthorDto bookAuthor) {
         bookAuthorRepository.save(bookAuthorTransformer.fromDto(bookAuthor));
+    }
+
+    @PutMapping(value = "/{id}", consumes = JSON_VERSION_1)
+    void updateAuthor(
+            @PathVariable("id") @Nonnull final Long id,
+            @RequestBody @Valid final BookAuthorDto authorDto) {
+        final BookAuthorEntity author = bookAuthorRepository.getById(id);
+        bookAuthorTransformer.update(author, authorDto);
+        bookAuthorRepository.save(author);
     }
 
 }
