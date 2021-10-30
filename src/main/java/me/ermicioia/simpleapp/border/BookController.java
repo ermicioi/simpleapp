@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/books")
 @RequiredArgsConstructor
-public class BookController {
+class BookController {
 
     private final BookRepository bookRepository;
     private final BookEditionRepository bookEditionRepository;
