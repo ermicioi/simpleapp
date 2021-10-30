@@ -1,6 +1,7 @@
 package me.ermicioia.simpleapp.border;
 
 import lombok.RequiredArgsConstructor;
+import me.ermicioia.simpleapp.control.BookEditionRepository;
 import me.ermicioia.simpleapp.control.BookRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +15,12 @@ import java.util.List;
 public class BookController {
 
     private final BookRepository bookRepository;
+    private final BookEditionRepository bookEditionRepository;
+
     private final BookTransformer bookTransformer;
     private final BookV2Transformer bookV2Transformer;
     private final BookV3Transformer bookV3Transformer;
+    private final BookV4Transformer bookV4Transformer;
 
     @GetMapping
     List<BookDto> getBooks() {
@@ -31,6 +35,11 @@ public class BookController {
     @GetMapping(params = "version=3")
     List<BookV3Dto> getBooksV3() {
         return bookV3Transformer.fromEntity(bookRepository.findAll());
+    }
+
+    @GetMapping(produces = "application/vnd.simpleapp.api+json;version=4")
+    List<BookV4Dto> getBooksV4() {
+        return bookV4Transformer.fromEntity(bookEditionRepository.findAll());
     }
 
 }
