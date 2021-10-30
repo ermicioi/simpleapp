@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "SimpleApp",
-		"_postman_id": "a69607b5-d344-4431-aa90-971bbe15f56b",
+		"_postman_id": "72e8cd22-5d5f-10f0-6355-dd4a0a91d337",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -13,7 +13,10 @@
 				"url": "localhost:8080/books",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -24,7 +27,10 @@
 				"url": "localhost:8080/books/v2",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -53,7 +59,10 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -70,7 +79,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -87,7 +99,67 @@
 						"description": ""
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Authors :: Get All (v1)  - CSV",
+			"request": {
+				"url": "localhost:8080/authors",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.simpleapp.api+csv;version=1",
+						"description": ""
+					}
+				],
 				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Authors :: Add (v1)",
+			"request": {
+				"url": "localhost:8080/authors",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.simpleapp.api+json;version=1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Erich\",\n\t\"lastName\": \"Gamma\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Authors :: Update (v1)",
+			"request": {
+				"url": "localhost:8080/authors/4",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.simpleapp.api+json;version=1",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Erich\",\n\t\"lastName\": \"Gamma X\"\n}"
+				},
 				"description": ""
 			},
 			"response": []
