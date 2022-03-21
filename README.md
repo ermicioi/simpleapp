@@ -1,16 +1,52 @@
-# List Domain Objects
-## Author
-The author of a book. One Author can have many books written as well as to be a co-author on a book.
+# Authors
 
-## Book
-Basic representation of a book. The printed copy of the same book can be published by multiple publishers or to have a 
-revision. A printed copy of the book is represented by *Book Edition*.
+## GET `/authors` - get list of authors
+### Headers
+| Header  | Value                                        | Comment                           |
+|---------|----------------------------------------------|-----------------------------------|
+| Accept  | application/vnd.simpleapp.api+json;version=1 | Return payload format JSON        |
+| Accept  | application/vnd.simpleapp.api+csv;version=1  | Return payload format in CSV file |
 
-## Book Category
-A book can fall under one or many categories.
+## POST `/authors` - add author
+### Headers
+| Header       | Value                                        |
+|--------------|----------------------------------------------|
+| Content-Type | application/vnd.simpleapp.api+json;version=1 |
 
-## Book Edition
-Representation of printed/published copy of the book.
+### Payload
+```json
+{
+  "firstName": "string",
+  "lastName": "string"
+}
+```
 
-## Publisher
-The publisher of the concrete edition of the book.
+
+## PUT `/authors/{id}` - update author
+### Path parameters
+| Parameter | Type    |
+|-----------|---------|
+| id        | integer |
+
+### Headers
+| Header       | Value                                        |
+|--------------|----------------------------------------------|
+| Content-Type | application/vnd.simpleapp.api+json;version=1 |
+
+### Payload
+```json
+{
+  "firstName": "string",
+  "lastName": "string"
+}
+```
+
+# Books
+## GET `/books` - get books
+### Versions
+| Version | Description                                                                         | 
+|---------|-------------------------------------------------------------------------------------|
+| 1       | Requires header `Accept` to equal to `application/json`                             | 
+| 2       | Requires addition to path `/v2/`                                                    |
+| 3       | Requires version provided as query parameter, `version=3`                           |
+| 4       | Requires header `Accept` to equal to `application/vnd.simpleapp.api+json;version=4` |

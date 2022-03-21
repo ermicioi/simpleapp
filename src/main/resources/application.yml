@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/simpleapp
-    username: root
-    password: rootpass
+    username: erani
+    password: eranipass
     driver-class-name: com.mysql.jdbc.Driver
     initialization-mode: always
 
